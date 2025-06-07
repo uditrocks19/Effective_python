@@ -4,10 +4,10 @@ class Gradebook:
         self._grades = {}
     
     def add_student(self, name):
-        self._grades[name] = []
+        self._grades[name] = {}
     
-    def report_grade(self, name, score):
-        self._grades[name].append(score)
+    def report_grade(self, name, subject, grade):
+        self._grades[name].append()
     
     def average_grade(self, name):
         if name not in self._grades:
