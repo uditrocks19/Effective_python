@@ -24,12 +24,15 @@ class IndexableTree(BinaryNode):
         for node in self._traverse():
             yield node.value
 
+    def __len__(self):
+        return sum(1 for _ in self._traverse())
+
 obj = IndexableTree(
     10,
     left=IndexableTree(5, right=IndexableTree(9)),
     right=IndexableTree(13)
 )
-
+# test cases
 print(list(obj))
 print(obj[2])
-
+print(len(obj))
